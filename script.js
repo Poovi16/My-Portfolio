@@ -236,3 +236,171 @@ console.log(
     "%cPortfolio Loaded Successfully 🚀",
     "color:#38bdf8;font-size:16px;font-weight:bold;"
 );
+
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 80 },
+    color: { value: "#38bdf8" },
+    shape: { type: "circle" },
+    opacity: { value: 0.5 },
+    size: { value: 3 },
+    move: {
+      enable: true,
+      speed: 2
+    }
+  }
+});
+
+// =====================================
+// CONTACT FORM
+// =====================================
+
+const contactForm =
+document.querySelector(".contact-form-card form");
+
+if(contactForm){
+
+    contactForm.addEventListener("submit",(e)=>{
+
+        e.preventDefault();
+
+        const name =
+        contactForm.querySelector(
+            'input[type="text"]'
+        ).value.trim();
+
+        const email =
+        contactForm.querySelector(
+            'input[type="email"]'
+        ).value.trim();
+
+        const message =
+        contactForm.querySelector(
+            'textarea'
+        ).value.trim();
+
+        if(!name || !email || !message){
+
+            alert("Please fill all fields");
+            return;
+        }
+
+        const submitBtn =
+        contactForm.querySelector("button");
+
+        submitBtn.innerHTML =
+        '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+        submitBtn.disabled = true;
+
+        setTimeout(()=>{
+
+            submitBtn.innerHTML =
+            '<i class="fas fa-check"></i> Message Sent';
+
+            submitBtn.style.background =
+            "#22c55e";
+
+            contactForm.reset();
+
+            setTimeout(()=>{
+
+                submitBtn.innerHTML =
+                '<i class="fas fa-paper-plane"></i> Send Message';
+
+                submitBtn.style.background = "";
+                submitBtn.disabled = false;
+
+            },2500);
+
+        },1500);
+
+    });
+
+}
+
+// =====================================
+// CONTACT CARD HOVER EFFECT
+// =====================================
+
+const cards = document.querySelectorAll(
+'.contact-info-card, .contact-form-card'
+);
+
+cards.forEach(card => {
+
+    card.addEventListener('mousemove',(e)=>{
+
+        const rect =
+        card.getBoundingClientRect();
+
+        const x =
+        e.clientX - rect.left;
+
+        const y =
+        e.clientY - rect.top;
+
+        card.style.background =
+        `radial-gradient(
+            circle at ${x}px ${y}px,
+            rgba(56,189,248,0.15),
+            rgba(15,23,42,0.75) 40%
+        )`;
+
+    });
+
+    card.addEventListener('mouseleave',()=>{
+
+        card.style.background =
+        'rgba(15,23,42,0.75)';
+
+    });
+
+});
+
+// =====================================
+// CONTACT SECTION REVEAL
+// =====================================
+
+const contactCards =
+document.querySelectorAll(
+'.contact-info-card,.contact-form-card'
+);
+
+const contactObserver =
+new IntersectionObserver(entries=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.style.opacity="1";
+            entry.target.style.transform="translateY(0)";
+
+        }
+
+    });
+
+},{
+    threshold:0.2
+});
+
+contactCards.forEach(card=>{
+
+    card.style.opacity="0";
+    card.style.transform="translateY(50px)";
+    card.style.transition="0.8s ease";
+
+    contactObserver.observe(card);
+
+});
+
+const glow=document.querySelector(".cursor-glow");
+
+document.addEventListener("mousemove",(e)=>{
+
+glow.style.left=e.clientX+"px";
+
+glow.style.top=e.clientY+"px";
+
+});

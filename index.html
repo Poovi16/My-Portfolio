@@ -15,11 +15,16 @@
 
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="chatbot.css">
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
+    <div class="cursor-glow"></div>
+    
+
+     <!-- NAVBAR -->
 
     <header>
         <nav class="navbar">
@@ -188,6 +193,8 @@
 
             <div class="project-card" data-aos="fade-up">
 
+                <img src="assets/images/AI Talent.png" class="project-image" alt="AI Talent OS">
+
                 <h3>AI Talent OS - AI-Powered Career Development Platform</h3>
 
                 <p>
@@ -199,6 +206,8 @@
             </div>
 
              <div class="project-card" data-aos="fade-up">
+
+                <img src="assets/images/Vendor OS.png" class="project-image" alt="AI Talent OS">
 
                 <h3>VendorOS - Smart Retail & Inventory Management Platform</h3>
 
@@ -212,12 +221,12 @@
 
             <div class="project-card" data-aos="fade-up">
 
+                <img src="assets/images/crop.png" class="project-image" alt="AI Talent OS">
+
                 <h3>Crop Recommendation System</h3>
 
                 <p>
-                    Machine Learning solution that recommends
-                    suitable crops based on environmental
-                    and soil conditions.
+                    Developed a Machine Learning-based Crop Recommendation System using soil and climate data. It predicts the most suitable crop based on N, P, K, pH, temperature, humidity, and rainfall. The system delivers accurate recommendations through an easy-to-use interface. It supports smarter farming and improved crop productivity.
                 </p>
 
                 <a href="https://github.com/Poovi16/Crop-Recommendation-Project.git">GitHub Repository</a>
@@ -225,6 +234,8 @@
             </div>
 
             <div class="project-card" data-aos="fade-up">
+
+                <img src="assets/images/cricket.png" class="project-image" alt="AI Talent OS">
 
                 <h3>Cricket Shot Detection</h3>
 
@@ -239,6 +250,8 @@
             </div>
 
             <div class="project-card" data-aos="fade-up">
+
+                <img src="assets/images/Portfolio.png" class="project-image" alt="AI Talent OS">
 
                 <h3>My Personal Portfolio Website</h3>
 
@@ -330,28 +343,92 @@
 
     <!-- CONTACT -->
 
-    <section id="contact" class="section">
+    <section id="contact" class="section contact-section">
 
-        <h2 class="section-title">Contact</h2>
+    <h2 class="section-title">Contact</h2>
+    <p class="contact-subtitle">
+        Let's build something great together
+    </p>
 
-        <div class="contact-container">
+    <div class="contact-wrapper">
 
-            <a href="https://linkedin.com/in/poovarasan-m-"
-                target="_blank">
-                <i class="fab fa-linkedin"></i>
-                LinkedIn
-            </a>
+        <div class="contact-info-card">
 
-            <a href="https://github.com/Poovi16">
-                <i class="fab fa-github"></i>
-                GitHub
-            </a>
+            <h3>Get in Touch</h3>
 
-            <a href="mailto:poovarasanaravith355@gmail.com"
-                target="_blank">
+            <p>
+                I'm currently open to internships,
+                freelance work and full-time roles.
+                Reach out via any of the channels below.
+            </p>
+
+            <div class="contact-item">
                 <i class="fas fa-envelope"></i>
-                Email
-            </a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=poovarasanaravith355@gmail.com" target="_blank">
+                    <span>poovarasanaravith355@gmail.com</span>
+                </a>
+            </div>
+
+            <div class="contact-item">
+                <i class="fab fa-linkedin"></i>
+                <a href="https://linkedin.com/in/poovarasan-m-" target="_blank">
+                    LinkedIn
+                </a>
+            </div>
+
+            <div class="contact-item">
+                <i class="fab fa-github"></i>
+                <a href="https://github.com/Poovi16" target="_blank">
+                    GitHub
+                </a>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Tamilnadu, India</span>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>Available 9AM - 9PM IST</span>
+            </div>
+
+        </div>
+
+        <div class="contact-form-card">
+
+            <form>
+
+                <input
+                    type="text"
+                    placeholder="Your Full Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    placeholder="you@example.com"
+                    required
+                >
+
+                <textarea
+                    rows="6"
+                    placeholder="Tell me about your project..."
+                    required
+                ></textarea>
+
+                <button type="submit">
+                    <i class="fas fa-paper-plane"></i>
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
 
         </div>
 
@@ -370,6 +447,127 @@
 
     <!-- JS -->
     <script src="script.js"></script>
+
+    <!-- ================= CHATBOT START ================= -->
+
+<!-- Floating Button -->
+<div class="chat-toggle" id="chatToggle">
+    <i class="fas fa-comments"></i>
+</div>
+
+<!-- Chatbot -->
+<div class="chatbot" id="chatbot">
+
+    <!-- Header -->
+    <div class="chat-header">
+        <div class="bot-profile">
+
+            <div class="bot-avatar">
+                🤖
+            </div>
+
+            <div>
+                <h3>Portfolio Assistant</h3>
+                <span>Online</span>
+            </div>
+
+        </div>
+
+        <button id="closeChat">
+            <i class="fas fa-times"></i>
+        </button>
+
+    </div>
+
+    <!-- Messages -->
+    <div class="chat-body" id="chatBody">
+
+        <div class="bot-message">
+
+            👋 Hi! I'm Poovarasan's AI Assistant.
+
+            <br><br>
+
+            Ask me about
+
+            <br><br>
+
+            • About Me
+
+            <br>
+
+            • Skills
+
+            <br>
+
+            • Projects
+
+            <br>
+
+            • Resume
+
+            <br>
+
+            • Contact
+
+            <br>
+
+            • GitHub
+
+            <br>
+
+            • LinkedIn
+
+        </div>
+
+    </div>
+
+    <!-- Quick Buttons -->
+
+    <div class="quick-buttons">
+
+        <button onclick="quickQuestion('About')">
+            About
+        </button>
+
+        <button onclick="quickQuestion('Projects')">
+            Projects
+        </button>
+
+        <button onclick="quickQuestion('Skills')">
+            Skills
+        </button>
+
+        <button onclick="quickQuestion('Resume')">
+            Resume
+        </button>
+
+    </div>
+
+    <!-- Footer -->
+
+    <div class="chat-footer">
+
+        <input
+            type="text"
+            id="userInput"
+            placeholder="Ask me anything..."
+        >
+
+        <button id="sendBtn">
+
+            <i class="fas fa-paper-plane"></i>
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ================= CHATBOT END ================= -->
+
+<script src="chatbot.js"></script>
+
 
 </body>
 

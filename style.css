@@ -372,30 +372,126 @@ img{
    CONTACT
 ========================== */
 
-.contact-container{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:20px;
+.contact-section{
+    text-align:center;
 }
 
-.contact-container a{
-    background:var(--card);
+.contact-subtitle{
+    color:#94a3b8;
+    margin-bottom:50px;
+}
 
-    padding:15px 25px;
+.contact-wrapper{
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.contact-info-card,
+.contact-form-card{
+    flex:1;
+    min-width:350px;
+    max-width:550px;
+
+    background:rgba(15,23,42,0.7);
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(56,189,248,0.2);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    text-align:left;
+}
+
+.contact-info-card h3{
+    color:#38bdf8;
+    margin-bottom:20px;
+    font-size:28px;
+}
+
+.contact-info-card p{
+    color:#cbd5e1;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.contact-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.contact-item i{
+    width:50px;
+    height:50px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
     border-radius:12px;
+
+    background:rgba(56,189,248,.1);
+    border:1px solid rgba(56,189,248,.3);
+
+    color:#38bdf8;
+}
+
+.contact-item a,
+.contact-item span{
+    color:white;
+    text-decoration:none;
+}
+
+.contact-form-card input,
+.contact-form-card textarea{
+    width:100%;
+    padding:16px;
+    margin-bottom:20px;
+
+    background:#08142d;
+
+    border:1px solid rgba(56,189,248,.2);
+
+    border-radius:12px;
+
+    color:white;
+    font-size:15px;
+}
+
+.contact-form-card input:focus,
+.contact-form-card textarea:focus{
+    outline:none;
+    border-color:#38bdf8;
+}
+
+.contact-form-card button{
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#38bdf8;
+
+    color:#08142d;
+
+    font-weight:700;
+
+    cursor:pointer;
 
     transition:.3s;
 }
 
-.contact-container a:hover{
-    background:var(--primary);
-    color:#000;
-}
-
-.contact-container i{
-    margin-right:8px;
+.contact-form-card button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 25px rgba(56,189,248,.5);
 }
 
 /* ==========================
@@ -460,3 +556,183 @@ footer{
         font-size:2.3rem;
     }
 }
+
+/* Particles Background */
+#particles-js{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-1;
+}
+
+.cursor-glow{
+    position: fixed;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+        rgba(0,180,255,.18) 0%,
+        rgba(0,180,255,.08) 40%,
+        transparent 75%);
+    pointer-events: none;
+    transform: translate(-50%,-50%);
+    z-index: 0;
+    transition: transform .08s linear;
+    filter: blur(20px);
+}
+
+/* ===========================
+   HOVER GLOW EFFECT
+=========================== */
+
+.project-card,
+.skill-card,
+.service-card,
+.education-card,
+.contact-card{
+
+    transition: all .45s ease;
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.project-card:hover,
+.skill-card:hover,
+.service-card:hover,
+.education-card:hover,
+.contact-card:hover{
+
+    transform: translateY(-12px) scale(1.03);
+
+    border-color:#00c3ff;
+
+    box-shadow:
+        0 0 20px rgba(0,195,255,.5),
+        0 0 40px rgba(0,195,255,.35),
+        0 0 80px rgba(0,195,255,.2);
+
+}
+
+.btn{
+
+transition:.35s;
+
+}
+
+.btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+
+0 0 15px #00d4ff,
+
+0 0 35px rgba(0,212,255,.5);
+
+}
+
+nav a{
+
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:#00d4ff;
+
+text-shadow:
+
+0 0 10px #00d4ff,
+
+0 0 25px #00d4ff;
+
+}
+
+.profile img{
+
+transition:.5s;
+
+}
+
+.profile img:hover{
+
+transform:scale(1.05);
+
+box-shadow:
+
+0 0 30px #00d4ff,
+
+0 0 70px rgba(0,212,255,.4);
+
+}
+
+.project-card i,
+.skill-card i{
+
+transition:.35s;
+
+}
+
+.project-card:hover i,
+.skill-card:hover i{
+
+transform:scale(1.3)
+rotate(8deg);
+
+color:#00d4ff;
+
+text-shadow:
+
+0 0 20px #00d4ff;
+
+}
+
+section h2{
+
+transition:.35s;
+
+}
+
+section h2:hover{
+
+letter-spacing:2px;
+
+text-shadow:
+
+0 0 15px #00d4ff,
+
+0 0 30px #00d4ff;
+
+}
+
+.project-card{
+
+animation:floatCard 5s ease-in-out infinite;
+
+}
+
+@keyframes floatCard{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-5px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
