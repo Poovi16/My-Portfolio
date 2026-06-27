@@ -258,9 +258,10 @@ function botReply(msg) {
     ) {
 
         addBotMessage(`
-        📧 Email : yourmail@gmail.com<br><br>
+        📧 Email : poovarasanaravith355@
+        gmail.com<br><br>
 
-        📱 Mobile : +91 xxxxxxxxxx<br><br>
+        📱 Mobile : +91 9360866955<br><br>
 
         Feel free to contact anytime.
         `);
@@ -290,7 +291,7 @@ function botReply(msg) {
         addBotMessage(`
         💼 LinkedIn<br><br>
 
-        Add your LinkedIn URL here.
+        www.linkedin.com/in/poovarasan-m-
         `);
 
     }
